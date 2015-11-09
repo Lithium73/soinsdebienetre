@@ -11,6 +11,11 @@
   width:1000px;
 }
 
+#meBill{
+  display:inline-block;
+  background-color:red;
+}
+
 #photo{
     width:200px;
 }

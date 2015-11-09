@@ -1,0 +1,16 @@
+billgrid{
+
+}
+
+.cell{
+  border:1px solid black;
+}
+
+.text{
+  float:left;
+  clear:left;
+}
+
+.price{
+  float:left;
+}
