@@ -1,0 +1,9 @@
+.sePage{
+  text-align:center
+}
+
+#seDesc{
+  width:400px;
+  text-align:left;
+  display:inline-block
+}

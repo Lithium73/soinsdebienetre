@@ -27,6 +27,26 @@ angular
         templateUrl: 'views/about.html',
         controller: 'AboutCtrl'
       })
+      .when('/contact', {
+        templateUrl: 'views/contact.html',
+        controller: 'ContactCtrl'
+      })
+      .when('/me', {
+        templateUrl: 'views/me.html',
+        controller: 'MeCtrl'
+      })
+      .when('/math', {
+        templateUrl: 'views/math.html',
+        controller: 'MathCtrl'
+      })
+      .when('/se', {
+        templateUrl: 'views/se.html',
+        controller: 'SeCtrl'
+      })
+      .when('/photo', {
+        templateUrl: 'views/photo.html',
+        controller: 'PhotoCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
