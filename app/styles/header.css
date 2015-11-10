@@ -1,0 +1,89 @@
+.header #title{
+  cursor:pointer;
+  height:325px;
+  width: 1418px;
+  font-weight:bold;
+
+  font-size:50px;
+  display: inline-block;
+  background-image:url(../images/head.png);
+  line-height: 305px;
+
+}
+
+
+#menu{
+  display:inline-block;
+}
+
+#menu .item{
+  padding-left:15px;
+  padding-right:15px;
+  margin-left:60px;
+  font-size:20px;
+  float:left;
+}
+
+#seItems{
+  width:350px;
+  position:absolute;
+  left:948px;
+  top:400px;
+  text-align:center;
+}
+#seItems .item{
+  width:350px;
+  display:inline-block;
+  float:left;
+  clear:left;
+  text-align:center;
+  padding:0;
+  margin:0;
+}
+
+#seItems .item:hover{
+  text-decoration : underline;
+  cursor:pointer;
+}
+
+
+.header{
+  margin-top:10px;
+  text-align:center;
+}
+
+#contactBubble{
+  background-color: rgba(226, 255, 146, 1);
+  position:absolute;
+  width:500px;
+  left:1350px;
+  top:400px;
+}
+
+#contactBubble #closeContact{
+  cursor :pointer;
+  left:450px;
+  position:absolute;
+  border:1px solid black;
+  width:25px;
+  height:25px;
+}
+
+#contactTextArea{
+  padding:5px;
+  clear:left;
+  float:left;
+  width:300px;
+  height:100px;
+  font-size:15px;
+  border-radius:25px 25px 25px 25px;
+}
+
+#contactButton{
+  margin-left:10px;
+  margin-top:35px;
+  float:left;
+  font-size:20px;
+  height:30px;
+  width:100px;
+}

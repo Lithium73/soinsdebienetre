@@ -26,64 +26,14 @@ body{
   width:100px;
 }
 
-.header{
-  margin-top:10px;
-  text-align:center;
-}
 
 .hide{
   display:none;
 }
 
-#menu{
-  display:inline-block;
-}
 
-#menu .item{
-  padding-left:15px;
-  padding-right:15px;
-  margin-left:60px;
-  font-size:20px;
-  float:left;
-}
-
-#seItems{
-  width:350px;
-  position:absolute;
-  left:948px;
-  top:400px;
-  text-align:center;
-}
-#seItems .item{
-  width:350px;
-  display:inline-block;
-  float:left;
-  clear:left;
-  text-align:center;
-  padding:0;
-  margin:0;
-}
-
-#seItems .item:hover{
-  text-decoration : underline;
-  cursor:pointer;
-}
-
-.header #title{
-  cursor:pointer;
-  height:325px;
-  width: 1418px;
-  font-weight:bold;
-
-  font-size:50px;
-  display: inline-block;
-  background-image:url(../images/head.png);
-  line-height: 305px;
-
-}
-
-.footer #contact{
-  width:150px;
+.footer #info{
+  width:1920px;
   position:absolute;
   bottom:0%;
   margin-bottom:25px;
@@ -141,7 +91,7 @@ PAGE
   text-align:center;
   width:1000px;
   font-weight:bold;
-  line-height:70px;
+  line-height:55px;
   padding-left:15px;
   padding-right:15px;
   font-size:25px;
@@ -177,6 +127,22 @@ PAGE
   display:inline-block;
   margin-left:200px;
   margin-top:320px;
+}
+
+.mainPage #event{
+  position:absolute;
+  width:500px;
+  height:250px;
+  top:700px;
+  left:350px;
+}
+
+.mainPage #offer{
+  position:absolute;
+  width:500px;
+  height:250px;
+  top:700px;
+  left:1080px;
 }
 
 

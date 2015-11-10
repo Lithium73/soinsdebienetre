@@ -11,6 +11,7 @@ angular.module('soinsbienetreApp')
   .controller('HeaderCtrl', function ($scope,$rootScope,$location) {
 
     $rootScope.seDisplay = false;
+    $rootScope.contactDisplay = false;
 
     $rootScope.clickMain = function(){
       $location.path("/")
@@ -30,6 +31,10 @@ angular.module('soinsbienetreApp')
 
     $rootScope.clickPhoto = function(){
       $location.path("/photo")
+    };
+
+    $rootScope.clickContact = function(){
+      $rootScope.contactDisplay = true;
     };
 
   });
