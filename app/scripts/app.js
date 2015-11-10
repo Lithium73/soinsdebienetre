@@ -57,6 +57,7 @@ angular
   }).run(function($rootScope){
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
       $(document.body).trigger("resize");
+      $rootScope.seDisplay=false;
     });
   });
 

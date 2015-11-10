@@ -10,6 +10,12 @@
 angular.module('soinsbienetreApp')
   .controller('HeaderCtrl', function ($scope,$rootScope,$location) {
 
+    $rootScope.seDisplay = false;
+
+    $rootScope.clickMain = function(){
+      $location.path("/")
+    };
+
     $rootScope.clickMe = function(){
       $location.path("/me")
     };

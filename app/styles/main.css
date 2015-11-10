@@ -3,8 +3,9 @@ body{
   width:1920px;
   background-image:url(../images/background.jpg);
   background-size:100% 90%;
-  color: #334dc6;
+  color: #345e7f;
   overflow: hidden;
+  font-size:20px;
   font-family: Arial;
 }
 
@@ -30,6 +31,10 @@ body{
   text-align:center;
 }
 
+.hide{
+  display:none;
+}
+
 #menu{
   display:inline-block;
 }
@@ -42,7 +47,30 @@ body{
   float:left;
 }
 
+#seItems{
+  width:350px;
+  position:absolute;
+  left:948px;
+  top:400px;
+  text-align:center;
+}
+#seItems .item{
+  width:350px;
+  display:inline-block;
+  float:left;
+  clear:left;
+  text-align:center;
+  padding:0;
+  margin:0;
+}
+
+#seItems .item:hover{
+  text-decoration : underline;
+  cursor:pointer;
+}
+
 .header #title{
+  cursor:pointer;
   height:325px;
   width: 1418px;
   font-weight:bold;
@@ -77,6 +105,7 @@ body{
   cursor:pointer;
   box-shadow:10px 1px 20px black;
   font-weight:bold;
+  color: #334dc6;
 }
 
 .bubble.link:after{
@@ -110,9 +139,12 @@ PAGE
   margin-top:70px;
   display:inline-block;
   text-align:center;
-  width:700px;
-  height:70px;
-  font-size:18px;
+  width:1000px;
+  font-weight:bold;
+  line-height:70px;
+  padding-left:15px;
+  padding-right:15px;
+  font-size:25px;
 }
 
 .mainPage #me{
