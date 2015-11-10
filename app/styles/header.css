@@ -1,13 +1,14 @@
 .header #title{
   cursor:pointer;
-  height:325px;
-  width: 1418px;
+  height:218px;
+  width: 990px;
   font-weight:bold;
 
-  font-size:50px;
+  font-size:45px;
   display: inline-block;
   background-image:url(../images/head.png);
-  line-height: 305px;
+  background-size:990px 248px;
+  line-height: 208px;
 
 }
 
@@ -20,15 +21,16 @@
   padding-left:15px;
   padding-right:15px;
   margin-left:60px;
-  font-size:20px;
+  font-size:18px;
   float:left;
 }
 
 #seItems{
+  z-index:2;
   width:350px;
   position:absolute;
   left:948px;
-  top:400px;
+  top:290px;
   text-align:center;
 }
 #seItems .item{
@@ -57,7 +59,8 @@
   position:absolute;
   width:500px;
   left:1350px;
-  top:400px;
+  top:300px;
+  z-index:2;
 }
 
 #contactBubble #closeContact{

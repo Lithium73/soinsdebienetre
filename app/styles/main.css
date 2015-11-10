@@ -3,7 +3,7 @@ body{
   width:1920px;
   background-image:url(../images/background.jpg);
   background-size:100% 90%;
-  color: #345e7f;
+  color:#28455D;
   overflow: hidden;
   font-size:20px;
   font-family: Arial;
@@ -91,10 +91,10 @@ PAGE
   text-align:center;
   width:1000px;
   font-weight:bold;
-  line-height:55px;
+  line-height:40px;
   padding-left:15px;
   padding-right:15px;
-  font-size:25px;
+  font-size:21px;
 }
 
 .mainPage #me{
@@ -133,7 +133,7 @@ PAGE
   position:absolute;
   width:500px;
   height:250px;
-  top:700px;
+  top:600px;
   left:350px;
 }
 
@@ -141,7 +141,7 @@ PAGE
   position:absolute;
   width:500px;
   height:250px;
-  top:700px;
+  top:600px;
   left:1080px;
 }
 

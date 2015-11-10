@@ -3,7 +3,36 @@
 }
 
 #seDesc{
-  width:400px;
+  width:1800px;
   text-align:left;
   display:inline-block
 }
+
+.sePage .bubble.link.sePageItem{
+  margin-left:377px;
+  margin-top:50px;
+  line-height:200px;
+  float:left;
+  width:400px;
+  height:200px;
+}
+
+.sePage .sePageItem.bubble:after{
+  display:none;
+}
+
+.sePage #photo{
+  position:absolute;
+  width:200px;
+  left:950px;
+  top:450px;
+}
+
+.sePage #event{
+  position:absolute;
+  width:200px;
+  left:950px;
+  top:700px;
+}
+
+

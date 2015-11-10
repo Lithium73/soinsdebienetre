@@ -1,5 +1,6 @@
 <div class="mePage">
   <div class="meDesc bubble">
+    <div class="mephoto"></div>
     <div id="content">
       La sérénité de l’esprit passe aussi par la relaxation du corps.<br/>
       Fermez les yeux, inspirez profondément et laissez-vous aller à rêver !<br/>
@@ -12,7 +13,6 @@
     </div>
     <billgrid id="meBill" xhr="mock/me.json" cellwidth="300"></billgrid>
   </div>
-
-  <div id="photo" class="bubble link">Photos / Vidéos</div>
-  <div id="event" class="bubble link">Evenements</div>
+  <div ng-mouseover="$root.seDisplay=false" ng-click="$root.clickPhoto()" class="bubble link" id="photos">Photos / videos</div>
+  <div ng-mouseover="$root.seDisplay=false" ng-click="$root.clickPhoto()" class="bubble link" id="event">Evenements</div>
 </div>

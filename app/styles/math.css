@@ -3,13 +3,42 @@
 }
 
 #maquillage{
+  padding-left:15px;
+  padding-right:15px;
+  margin-top:25px;
+  text-align:left;
   display:inline-block;
-  width:500px;
+  width:900px;
+}
+.maquillageTitle{
+  font-weight:bold;
+  font-size:25px;
 }
 
 #tatoo{
+  padding-left:15px;
+  padding-right:15px;
+  text-align:left;
   display:inline-block;
-  width:500px;
+  width:900px;
+}
+.tatooTitle{
+  font-weight:bold;
+  font-size:25px;
+}
+
+.mathPage #photo{
+    position:absolute;
+    top:400px;
+    left:1200px;
+    width:200px;
+}
+
+.mathPage #event{
+  position:absolute;
+  top:760px;
+  left:500px;
+  width:200px;
 }
 
 
