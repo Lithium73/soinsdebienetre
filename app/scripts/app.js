@@ -47,7 +47,17 @@ angular
         templateUrl: 'views/photo.html',
         controller: 'PhotoCtrl'
       })
+      .when('/header', {
+        templateUrl: 'views/header.html',
+        controller: 'HeaderCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });
+  }).run(function($rootScope){
+    $rootScope.$on("$routeChangeStart", function (event, next, current) {
+      $(document.body).trigger("resize");
+    });
   });
+
+

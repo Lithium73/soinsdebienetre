@@ -4,6 +4,7 @@ billgrid{
 
 .cell{
   border:1px solid black;
+  border-image: url("../images/bord.png") 42 round stretch;
 }
 
 .text{

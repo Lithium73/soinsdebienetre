@@ -24,11 +24,9 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <div id="title">
-          Soins de bien-être
-        </div>
+    <div class="container" resize="true">
+      <div class="header" ng-controller="HeaderCtrl" ng-include src="'views/header.html'">
+
       </div>
 
       <div ng-view="" class="content"></div>
@@ -61,6 +59,7 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
     <script src="bower_components/angular-cookies/angular-cookies.js"></script>
@@ -81,6 +80,8 @@
         <script src="scripts/controllers/se.js"></script>
         <script src="scripts/controllers/photo.js"></script>
         <script src="scripts/directives/billgrid.js"></script>
+        <script src="scripts/directives/resize.js"></script>
+        <script src="scripts/controllers/header.js"></script>
         <!-- endbuild -->
 </body>
 </html>
