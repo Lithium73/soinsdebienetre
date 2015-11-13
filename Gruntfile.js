@@ -9,6 +9,30 @@
 
 module.exports = function (grunt) {
 
+
+  var devConf = {
+    restApi : "",
+    mysql : {
+      url:"mysql.hostinger.fr",
+      bdd:"u631435321_soins",
+      login:"u631435321_lith",
+      password:"asustek73"
+    }
+  }
+
+  var prodConf = {
+    restApi : "",
+    mysql : {
+      url:"mysql.hostinger.fr",
+      bdd:"u631435321_soins",
+      login:"u631435321_lith",
+      password:"asustek73"
+    }
+  }
+
+
+  grunt.loadNpmTasks('grunt-text-replace');
+
   // Load grunt tasks automatically
   require('load-grunt-tasks')(grunt);
 
@@ -349,6 +373,26 @@ module.exports = function (grunt) {
         configFile: 'test/karma.conf.js',
         singleRun: true
       }
+    },
+
+    replace: {
+      dev: {
+        src: ['conf/*.php'],             // source files array (supports minimatch)
+        dest: 'backend/utils/',             // destination directory or file
+        replacements: [{
+          from: '%1',                   // string replacement
+          to: devConf.mysql.url
+        }, {
+          from: "%2",
+          to: devConf.mysql.bdd
+        }, {
+          from: "%3",
+          to: devConf.mysql.login
+        }, {
+          from: "%4",
+          to: devConf.mysql.password
+        }  ]
+      }
     }
   });
 
@@ -360,6 +404,7 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
+      'replace:dev',
       'wiredep',
       'concurrent:server',
       'autoprefixer',
