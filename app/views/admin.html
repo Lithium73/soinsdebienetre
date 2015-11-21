@@ -1,0 +1,17 @@
+<div class="adminPage">
+
+  <div id="activities">
+    <div class="title">
+      Activités
+    </div>
+    <select  ng-model="string" id="selectActivities" ng-change="changeSelect()">
+      <option ng-repeat="activity in activities" id="{{activity.title}}" value="{{activity.id}}">
+        {{activity.title}}
+      </option>
+    </select>
+  </div>
+  <div id="bills">
+    <billgrid xhr="{{selectedActivity}}" cellwidth="300"></billgrid>
+  </div>
+
+</div>
