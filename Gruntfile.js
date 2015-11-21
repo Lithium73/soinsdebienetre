@@ -342,6 +342,11 @@ module.exports = function (grunt) {
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
+        },{
+          expand: true,
+          cwd: 'backend',
+          dest: '<%= yeoman.dist %>/backend',
+          src: ['{,*/}*.*']
         }]
       },
       styles: {
@@ -392,6 +397,23 @@ module.exports = function (grunt) {
           from: "%4",
           to: devConf.mysql.password
         }  ]
+      },
+      prod: {
+        src: ['conf/*.php'],             // source files array (supports minimatch)
+        dest: 'backend/utils/',             // destination directory or file
+        replacements: [{
+          from: '%1',                   // string replacement
+          to: prodConf.mysql.url
+        }, {
+          from: "%2",
+          to: prodConf.mysql.bdd
+        }, {
+          from: "%3",
+          to: prodConf.mysql.login
+        }, {
+          from: "%4",
+          to: prodConf.mysql.password
+        }  ]
       }
     }
   });
@@ -428,6 +450,7 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
+    'replace:prod',
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
