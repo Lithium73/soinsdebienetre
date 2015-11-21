@@ -13,10 +13,10 @@ module.exports = function (grunt) {
   var devConf = {
     restApi : "",
     mysql : {
-      url:"mysql.hostinger.fr",
+      url:"localhost",
       bdd:"u631435321_soins",
-      login:"u631435321_lith",
-      password:"asustek73"
+      login:"root",
+      password:""
     }
   }
 
