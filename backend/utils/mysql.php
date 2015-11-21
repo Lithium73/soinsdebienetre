@@ -55,15 +55,14 @@ class MysqlData{
           $bill->setIdActivity($billsRaw[$i]->id_activity);
           $billsRaw[$i] = $bill;
       }
-      return json_encode($billsRaw);
+      return $billsRaw;
 
     }
 
     public function setBill($bills){
-
       //check existence
       $billfrombd = $this->getBill($bills->id);
-      if(count($billfrombd) > 0){
+      if(sizeof($billfrombd) > 0){
         //update
         if (!($request = $this->db->prepare("update line_bill set title = ?, price = ? where id = ?"))) {
             echo "Echec de la préparation : (" . $this->db->errno . ") " . $this->db->error;
@@ -133,16 +132,87 @@ class MysqlData{
 
     }
 
-    public function getPromo(){
+    public function getPromo($id=null,$idActivity=null){
+      if($id != null && $idActivity != null){
+        $query = "select * from promo where id = '".$id." and id_activity = '".$idActivity."'";
+      }else if($id != null && $idActivity == null){
+        $query = "select * from promo where id = '".$id."'";
+      }else if($id == null && $idActivity != null){
+        $query = "select * from promo where id_activity = '".$idActivity."'";
+      }
+      else{
+        $query = "select * from promo";
+      }
 
+      $promosRaw = $this->select($query);
+      for($i=0;$i<count($promosRaw);$i++){
+          $promo = new Promo();
+          $promo->setId($promosRaw[$i]->id);
+          $promo->setMessage($promosRaw[$i]->message);
+          $promo->setIdActivity($promosRaw[$i]->id_activity);
+          $promosRaw[$i] = $promo;
+      }
+      return $promosRaw;
     }
 
-    public function setPromo(){
+    public function setPromo($promos){
+      //check existence
+      $promofrombd = $this->getPromo($promos->id);
+      if(sizeof($promofrombd) > 0){
+        //update
+        if (!($request = $this->db->prepare("update promo set message = ? where id = ?"))) {
+            echo "Echec de la préparation : (" . $this->db->errno . ") " . $this->db->error;
+        }
 
+        $message = $bills->getMessage();
+
+        $id = $promos->getId();
+        if (!$request->bind_param("ss", $message,  $id)) {
+            echo "Echec lors du liage des paramètres : (" . $request->errno . ") " . $request->error;
+        }
+
+        if (!$request->execute()) {
+            echo "Echec lors de l'exécution : (" . $request->errno . ") " . $request->error;
+        }else{
+          return $promos;
+        }
+
+      }else{
+        //insert
+        if (!($request = $this->db->prepare("INSERT INTO promo(message,id_activity) VALUES (?,?)"))) {
+            echo "Echec de la préparation : (" . $this->db->errno . ") " . $this->db->error;
+        }
+
+        $message = $promos->getMessage();
+        $idActivity = $promos->getIdActivity();
+        if (!$request->bind_param("ss", $message, $idActivity)) {
+            echo "Echec lors du liage des paramètres : (" . $request->errno . ") " . $request->error;
+        }
+
+        if (!$request->execute()) {
+            echo "Echec lors de l'exécution : (" . $request->errno . ") " . $request->error;
+        }else{
+          return $promos;
+        }
+      }
     }
 
-    public function removePromo(){
+    public function removePromo($id){
+        $promofrombd = $this->getPromo($id);
+        if(count($promofrombd) > 0){
+          //update
+          if (!($request = $this->db->prepare("delete from promo where id = ?"))) {
+              echo "Echec de la préparation : (" . $this->db->errno . ") " . $this->db->error;
+          }
 
+          if (!$request->bind_param("s", $id)) {
+              echo "Echec lors du liage des paramètres : (" . $request->errno . ") " . $request->error;
+          }
+
+          if (!$request->execute()) {
+              echo "Echec lors de l'exécution : (" . $request->errno . ") " . $request->error;
+          }
+        }
     }
 
 }

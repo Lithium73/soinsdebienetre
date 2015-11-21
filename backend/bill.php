@@ -33,7 +33,7 @@ require("model/bill.php");
 
 
     $bills = $db->getBill($id,$idActivity);
-    echo $bills;
+    echo json_encode($bills);
   }
   /**
     *

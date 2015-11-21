@@ -43,8 +43,8 @@ angular.module('soinsbienetreApp')
 
           var final = document.createElement("div");
           final.appendChild(createTitle(grid.title,cellWidth));
-          for(var i=0; i<grid.grid.length;i++){
-            final.appendChild(createRow(grid.grid[i].text,grid.grid[i].price,cellWidth));
+          for(var i=0; i<grid.length;i++){
+            final.appendChild(createRow(grid[i].text,grid[i].price,cellWidth));
           }
           return final;
         };
