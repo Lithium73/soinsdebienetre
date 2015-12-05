@@ -51,7 +51,7 @@ angular
         templateUrl: 'views/header.html',
         controller: 'HeaderCtrl'
       })
-      .when('/admin', {
+      .when('/adminLolotte2190', {
         templateUrl: 'views/admin.html',
         controller: 'AdminCtrl',
         controllerAs: 'admin'
