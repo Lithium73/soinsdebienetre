@@ -43,6 +43,7 @@ class MysqlData{
         $query = "select * from line_bill where id_activity = '".$idActivity."'";
       }
       else{
+
         $query = "select * from line_bill";
       }
 
@@ -62,7 +63,8 @@ class MysqlData{
     public function setBill($bills){
       //check existence
       $billfrombd = $this->getBill($bills->id);
-      if(sizeof($billfrombd) > 0){
+      if(sizeof($billfrombd) > 0 && strlen($bills->id) > 0){
+        echo json_encode($billfrombd);
         //update
         if (!($request = $this->db->prepare("update line_bill set title = ?, price = ? where id = ?"))) {
             echo "Echec de la préparation : (" . $this->db->errno . ") " . $this->db->error;
@@ -82,6 +84,7 @@ class MysqlData{
         }
 
       }else{
+        echo "insert";
         //insert
         if (!($request = $this->db->prepare("INSERT INTO line_bill(title,price,id_activity) VALUES (?,?,?)"))) {
             echo "Echec de la préparation : (" . $this->db->errno . ") " . $this->db->error;

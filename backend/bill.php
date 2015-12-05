@@ -2,6 +2,8 @@
 require("utils/mysql.php");
 require("model/bill.php");
 
+   header("Access-Control-Allow-Origin: *");
+   header("Access-Control-Allow-Headers: Content-Type");
   $method = $_SERVER['REQUEST_METHOD'];
   if($method == "GET"){
     get();

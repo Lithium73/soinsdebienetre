@@ -7,7 +7,7 @@
  * # billgrid
  */
 angular.module('soinsbienetreApp')
-  .directive('billgrid', function ($http) {
+  .directive('billgridadmin', function ($http) {
     return {
       template: '<div></div>',
       restrict: 'E',
@@ -23,31 +23,61 @@ angular.module('soinsbienetreApp')
               var grid = data.data;
               grid.title=element.attr("title");
               var domGrid = createGrid(grid,cellWidth);
-              element.append(domGrid)
+              element.append(domGrid);
+
+              element.append(createSaveInput());
+              element.append(createAddRow());
+
             });
         });
 
+        var addRow = function(){
+          element.children().first().append(createRow("","","",attrs.cellwidth))
+        }
+
+        var createAddRow = function(){
+          var input = document.createElement("input");
+          input.type="button";
+          input.value="Ajouter ligne";
+          input.addEventListener("click",addRow);
+          return input;
+        }
+
+        var createSaveInput = function(){
+          var input = document.createElement("input");
+          input.type="button";
+          input.value="Sauver";
+          input.addEventListener("click",scope.onSaveClick);
+          return input;
+        }
+
         var createTitle = function(title,cellWidth){
-          var row = createRow(title,"€",cellWidth);
+          var row = createRow("",title,"€",cellWidth);
           row.className = "billgridTitle";
           return row;
         };
 
-        var createRow = function(title,price,cellWidth){
-          var text = document.createElement("div");
+        var createRow = function(idBdd,title,price,cellWidth){
+          var id = document.createElement("div");
+          id.className = "id cell";
+          id.textContent = idBdd;
+          id.style.display = "none";
+
+          var text = document.createElement("input");
           text.className = "text cell";
-          text.textContent = title;
+          text.value = title;
           text.style.width = cellWidth+"px";
 
-          var domPrice = document.createElement("div");
+          var domPrice = document.createElement("input");
           domPrice.className = "price cell";
-          domPrice.textContent = price;
+          domPrice.value = price;
           domPrice.style.width = cellWidth+"px";
 
           var row = document.createElement("div");
           row.className = "row";
           row.appendChild(text);
           row.appendChild(domPrice);
+          row.appendChild(id);
 
           return row
         };
@@ -57,7 +87,7 @@ angular.module('soinsbienetreApp')
           var final = document.createElement("div");
           final.appendChild(createTitle(grid.title,cellWidth));
           for(var i=0; i<grid.length;i++){
-            final.appendChild(createRow(grid[i].text,grid[i].price,cellWidth));
+            final.appendChild(createRow(grid[i].id,grid[i].text,grid[i].price,cellWidth));
           }
           return final;
         };
