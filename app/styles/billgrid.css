@@ -3,15 +3,15 @@ billgrid{
 }
 
 .cell{
-  border:1px solid black;
-  background-color: white;
+  /*border:1px solid white;*/
+  /*background-color: rgba(92, 203, 64, 0.74);;*/
   color: #356d91;
 }
 
 .billgridTitle .cell{
-  text-align:center;
-  background-color: #356d91;
-  color:white;
+  /*text-align:center;*/
+  /*background-color: #356d91;*/
+  /*color:white;*/
 }
 
 .text{
@@ -22,5 +22,5 @@ billgrid{
 
 .price{
   float:left;
-  text-align:right;
+  text-align:center;
 }

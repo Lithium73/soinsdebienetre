@@ -1,0 +1,19 @@
+.epilationsPage{
+  text-align:center;
+}
+
+.epilationsDesc{
+  display:inline-block;
+}
+
+#noforfait{
+  position:absolute;
+  top:550px;
+  left:650px;
+}
+
+#forfait{
+  position:absolute;
+  top:550px;
+  left:1102px;
+}

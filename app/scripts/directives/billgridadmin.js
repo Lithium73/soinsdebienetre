@@ -16,6 +16,8 @@ angular.module('soinsbienetreApp')
 
         scope.$watch(function() {return element.attr('xhr'); }, function(newValue){
           element[0].innerHTML = "";
+
+          newValue = "http://localhost/"+newValue;
           var dataUrl = newValue;
           var cellWidth = attrs.cellwidth;
           $http.get(dataUrl)
@@ -25,7 +27,7 @@ angular.module('soinsbienetreApp')
               var domGrid = createGrid(grid,cellWidth);
               element.append(domGrid);
 
-              element.append(createSaveInput());
+              element.append(createSaveInput(element));
               element.append(createAddRow());
 
             });
@@ -43,11 +45,18 @@ angular.module('soinsbienetreApp')
           return input;
         }
 
-        var createSaveInput = function(){
+        var createSaveInput = function(element){
           var input = document.createElement("input");
           input.type="button";
           input.value="Sauver";
-          input.addEventListener("click",scope.onSaveClick);
+          if(element.attr("id") != "billsgrid"){
+            console.log('pouet',element.attr("id"))
+            input.addEventListener("click",scope["onSaveClick"+""+element.attr("id")]);
+          }else{
+            console.log("pouet2")
+            input.addEventListener("click",scope.onSaveClick);
+          }
+
           return input;
         }
 
@@ -87,7 +96,12 @@ angular.module('soinsbienetreApp')
           var final = document.createElement("div");
           final.appendChild(createTitle(grid.title,cellWidth));
           for(var i=0; i<grid.length;i++){
-            final.appendChild(createRow(grid[i].id,grid[i].text,grid[i].price,cellWidth));
+            if(grid[i].text){
+              final.appendChild(createRow(grid[i].id,grid[i].text,grid[i].price,cellWidth));
+            }else{
+              final.appendChild(createRow(grid[i].id,grid[i].message,grid[i].price,cellWidth));
+            }
+
           }
           return final;
         };

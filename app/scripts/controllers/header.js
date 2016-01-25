@@ -8,7 +8,7 @@
  * Controller of the soinsbienetreApp
  */
 angular.module('soinsbienetreApp')
-  .controller('HeaderCtrl', function ($scope,$rootScope,$location) {
+  .controller('HeaderCtrl', function ($scope,$rootScope,$location,$http) {
 
     $rootScope.seDisplay = false;
     $rootScope.contactDisplay = false;
@@ -36,5 +36,14 @@ angular.module('soinsbienetreApp')
     $rootScope.clickContact = function(){
       $rootScope.contactDisplay = true;
     };
+
+    $scope.changeLocation = function(loc){
+      $location.path("/"+loc)
+    };
+
+    $scope.sendMail = function(){
+      var message = $("#contactTextArea")[0].value;
+      $http.post("http://localhost/backend/sendmail.php",{"message":message});
+    }
 
   });

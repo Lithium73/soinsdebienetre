@@ -15,12 +15,24 @@ angular.module('soinsbienetreApp')
       link: function postLink(scope, element, attrs) {
 
         scope.$watch(function() {return element.attr('xhr'); }, function(newValue){
+          newValue ="http://localhost/"+newValue;
           element[0].innerHTML = "";
           var dataUrl = newValue;
           var cellWidth = attrs.cellwidth;
           $http.get(dataUrl)
             .then(function(data){
+              console.log("got response")
               var grid = data.data;
+              grid.title=element.attr("title");
+              var domGrid = createGrid(grid,cellWidth);
+              element.append(domGrid)
+            },function(){
+              console.error("can't get xhr")
+              var grid = [
+                {"text":"fruenu freuneu fruenu","price":"10"},
+                {"text":"fruenu freuneu fruenu","price":"10"}
+
+              ];
               grid.title=element.attr("title");
               var domGrid = createGrid(grid,cellWidth);
               element.append(domGrid)
@@ -37,12 +49,12 @@ angular.module('soinsbienetreApp')
           var text = document.createElement("div");
           text.className = "text cell";
           text.textContent = title;
-          text.style.width = cellWidth+"px";
+          //text.style.width = ((cellWidth*2)-50)+"px";
 
           var domPrice = document.createElement("div");
           domPrice.className = "price cell";
-          domPrice.textContent = price;
-          domPrice.style.width = cellWidth+"px";
+          domPrice.innerHTML = "&nbsp;: "+price+"€";
+          //domPrice.style.width = 50+"px";
 
           var row = document.createElement("div");
           row.className = "row";
@@ -55,7 +67,7 @@ angular.module('soinsbienetreApp')
         var createGrid = function(grid,cellWidth){
 
           var final = document.createElement("div");
-          final.appendChild(createTitle(grid.title,cellWidth));
+          //final.appendChild(createTitle(grid.title,cellWidth));
           for(var i=0; i<grid.length;i++){
             final.appendChild(createRow(grid[i].text,grid[i].price,cellWidth));
           }

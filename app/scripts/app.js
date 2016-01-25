@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'angular-carousel'
   ])
   .config(function ($routeProvider) {
     $routeProvider
@@ -30,6 +31,18 @@ angular
       .when('/contact', {
         templateUrl: 'views/contact.html',
         controller: 'ContactCtrl'
+      })
+      .when('/bmp', {
+        templateUrl: 'views/bmp.html'
+      })
+      .when('/maquillage', {
+        templateUrl: 'views/maquillage.html'
+      })
+      .when('/epilations', {
+        templateUrl: 'views/epilations.html'
+      })
+      .when('/soinscomp', {
+        templateUrl: 'views/soinscomp.html'
       })
       .when('/me', {
         templateUrl: 'views/me.html',

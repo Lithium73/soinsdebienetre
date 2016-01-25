@@ -148,6 +148,7 @@ class MysqlData{
       }
 
       $promosRaw = $this->select($query);
+
       for($i=0;$i<count($promosRaw);$i++){
           $promo = new Promo();
           $promo->setId($promosRaw[$i]->id);
@@ -161,13 +162,13 @@ class MysqlData{
     public function setPromo($promos){
       //check existence
       $promofrombd = $this->getPromo($promos->id);
-      if(sizeof($promofrombd) > 0){
+      if(sizeof($promofrombd) > 0  && strlen($promos->id) > 0){
         //update
         if (!($request = $this->db->prepare("update promo set message = ? where id = ?"))) {
             echo "Echec de la préparation : (" . $this->db->errno . ") " . $this->db->error;
         }
 
-        $message = $bills->getMessage();
+        $message = $promos->getMessage();
 
         $id = $promos->getId();
         if (!$request->bind_param("ss", $message,  $id)) {
@@ -216,7 +217,96 @@ class MysqlData{
               echo "Echec lors de l'exécution : (" . $request->errno . ") " . $request->error;
           }
         }
+
+
     }
+
+
+
+    public function getEvent($id=null,$idActivity=null){
+          if($id != null && $idActivity != null){
+            $query = "select * from event where id = '".$id." and id_activity = '".$idActivity."'";
+          }else if($id != null && $idActivity == null){
+            $query = "select * from event where id = '".$id."'";
+          }else if($id == null && $idActivity != null){
+            $query = "select * from event where id_activity = '".$idActivity."'";
+          }
+          else{
+            $query = "select * from promo";
+          }
+
+          $promosRaw = $this->select($query);
+          for($i=0;$i<count($promosRaw);$i++){
+              $promo = new Promo();
+              $promo->setId($promosRaw[$i]->id);
+              $promo->setMessage($promosRaw[$i]->message);
+              $promo->setIdActivity($promosRaw[$i]->id_activity);
+              $promosRaw[$i] = $promo;
+          }
+          return $promosRaw;
+        }
+
+        public function setEvent($promos){
+          //check existence
+          $promofrombd = $this->getPromo($promos->id);
+          if(sizeof($promofrombd) > 0){
+            //update
+            if (!($request = $this->db->prepare("update event set message = ? where id = ?"))) {
+                echo "Echec de la préparation : (" . $this->db->errno . ") " . $this->db->error;
+            }
+
+            $message = $bills->getMessage();
+
+            $id = $promos->getId();
+            if (!$request->bind_param("ss", $message,  $id)) {
+                echo "Echec lors du liage des paramètres : (" . $request->errno . ") " . $request->error;
+            }
+
+            if (!$request->execute()) {
+                echo "Echec lors de l'exécution : (" . $request->errno . ") " . $request->error;
+            }else{
+              return $promos;
+            }
+
+          }else{
+            //insert
+            if (!($request = $this->db->prepare("INSERT INTO event(message,id_activity) VALUES (?,?)"))) {
+                echo "Echec de la préparation : (" . $this->db->errno . ") " . $this->db->error;
+            }
+
+            $message = $promos->getMessage();
+            $idActivity = $promos->getIdActivity();
+            if (!$request->bind_param("ss", $message, $idActivity)) {
+                echo "Echec lors du liage des paramètres : (" . $request->errno . ") " . $request->error;
+            }
+
+            if (!$request->execute()) {
+                echo "Echec lors de l'exécution : (" . $request->errno . ") " . $request->error;
+            }else{
+              return $promos;
+            }
+          }
+        }
+
+        public function removeEvent($id){
+            $promofrombd = $this->getPromo($id);
+            if(count($promofrombd) > 0){
+              //update
+              if (!($request = $this->db->prepare("delete from event where id = ?"))) {
+                  echo "Echec de la préparation : (" . $this->db->errno . ") " . $this->db->error;
+              }
+
+              if (!$request->bind_param("s", $id)) {
+                  echo "Echec lors du liage des paramètres : (" . $request->errno . ") " . $request->error;
+              }
+
+              if (!$request->execute()) {
+                  echo "Echec lors de l'exécution : (" . $request->errno . ") " . $request->error;
+              }
+            }
+
+
+        }
 
 }
 

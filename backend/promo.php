@@ -2,6 +2,8 @@
 require("utils/mysql.php");
 require("model/promo.php");
 
+  header("Access-Control-Allow-Origin: *");
+  header("Access-Control-Allow-Headers: Content-Type");
   $method = $_SERVER['REQUEST_METHOD'];
   if($method == "GET"){
     get();
@@ -47,7 +49,7 @@ require("model/promo.php");
     $promo = new Promo();
     $promo->setId($json->id);
     $promo->setMessage($json->message);
-    $promo->setIdActivity($json->idActivity);
+    $promo->setIdActivity($_GET["idActivity"]);
 
     $db = new MysqlData();
     $db->connect();

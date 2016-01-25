@@ -32,7 +32,9 @@
     "load-grunt-tasks": "^0.4.0",
     "phantomjs": "^1.9.18",
     "time-grunt": "^0.3.1",
-    "grunt-text-replace" : "^0.4.0"
+    "grunt-text-replace" : "^0.4.0",
+    "grunt-php" : "1.5.1",
+    "angular-carousel" : "1.0.1"
   },
   "engines": {
     "node": ">=0.10.0"

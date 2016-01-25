@@ -1,0 +1,13 @@
+.soinscompPage{
+  text-align:center;
+}
+
+.soinscompDesc{
+  display:inline-block;
+}
+
+.soinscompPage billgrid{
+  position:absolute;
+  left:892px;
+  top:400px;
+}

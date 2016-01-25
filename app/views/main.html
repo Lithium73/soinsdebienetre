@@ -1,18 +1,32 @@
 <div class="mainPage">
     <div id="description" class="bubble">
-      Esthéticienne à domicile.<br/>
-      Je me déplace chez vous du lundi au samedi sur rendez-vous à des prix très doux.<br/>
-      N'hésitez pas à consulter les différentes rubriques pour plus d'informations. <br/>
+      Bienvenue sur le site de soins et bien être <br/>
+      N'hésitez pas à consulter mes <a href="/#/se">prestations et tarifs</a>.
 
     </div>
 
-    <div id="event" class="bubble">Evènements</div>
-    <div id="offer" class="bubble">Promo</div>
+    <div id="event" class="bubble" >
+      <div class="eventoffertitlle">
+        Evenements
+      </div>
+      <div ng-bind="event">
+
+      </div>
+    </div>
+    <div id="offer" class="bubble" >
+      <div class="eventoffertitlle">
+        Promotions
+      </div>
+      <div ng-bind="promo">
+
+      </div>
+    </div>
 
     <!--<div id="me" ng-click="clickMe()" class="bubble link">Massage Esthétique</div>-->
     <!--<div id="math" ng-click="clickMath()" class="bubble link">Maquillage artistique et tatouage Hénné</div>-->
     <!--<div id="se" ng-click="clickSe()" class="bubble link">Soins Esthétiques</div>-->
     <!--<div id="photos" ng-click="clickPhoto()" class="bubble link">Photos / videos</div>-->
+
 
 </div>
 

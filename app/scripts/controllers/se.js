@@ -8,10 +8,8 @@
  * Controller of the soinsbienetreApp
  */
 angular.module('soinsbienetreApp')
-  .controller('SeCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('SeCtrl', function ($scope,$location) {
+    $scope.changeLocation = function(loc){
+      $location.path("/"+loc)
+    }
   });

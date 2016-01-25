@@ -8,10 +8,10 @@
  * Controller of the soinsbienetreApp
  */
 angular.module('soinsbienetreApp')
-  .controller('PhotoCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+  .controller('PhotoCtrl', function ($scope,$http) {
+
+    $http.get("http://localhost/backend/photos.php").success(function(data){
+      $scope.photos = data;
+    })
+
   });

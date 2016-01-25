@@ -1,0 +1,15 @@
+.maquillagePage{
+  text-align:center;
+}
+.maquillageDesc{
+  margin-top:50px;
+  display:inline-block;
+  width:800px;
+}
+.maquillagePage billgrid{
+  position:absolute;
+  left:900px;
+  top:500px;
+  display:inline-block;
+}
+

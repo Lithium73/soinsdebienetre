@@ -2,13 +2,25 @@
   text-align:center;
 }
 
+#maquillagegrid{
+  position:absolute;
+  top: 531px;
+  left: 892px;
+}
+
+#tatouagegrid{
+  position:absolute;
+  top:750px;
+  left: 892px;
+}
+
 #maquillage{
   padding-left:15px;
   padding-right:15px;
   margin-top:25px;
-  text-align:left;
+  text-align:center;
   display:inline-block;
-  width:900px;
+  width:1000px;
 }
 .maquillageTitle{
   font-weight:bold;
@@ -16,9 +28,10 @@
 }
 
 #tatoo{
+  margin-top:100px;
   padding-left:15px;
   padding-right:15px;
-  text-align:left;
+  text-align:center;
   display:inline-block;
   width:900px;
 }

@@ -6,32 +6,34 @@
   <div id="closeContact" ng-click="$root.contactDisplay = false;">X</div>
   <div id="textContact">
     <div id="mailContact">
-      Par mail :
+      Par mail : <a href="mailto:heloisepilgean@yahoo.fr">heloisepilgean@yahoo.fr</a>
     </div>
     <div id="telContact">
-      Par telephone :
+      Par telephone : 07.87.08.78.81
     </div>
     <div id="messageContact">
-      En m'envoyant un message
+      En m'envoyant un message :
     </div>
   </div>
   <textarea id="contactTextArea"></textarea>
-  <input type="button" id="contactButton" value="Envoyer"></input>
+  <input type="button" id="contactButton" value="Envoyer" ng-click="sendMail()"></input>
 </div>
-
+<br/>
 <div id="menu">
-  <div ng-mouseover="$root.seDisplay=false" ng-click="$root.clickMe()" class="item bubble link" id="me">Massage Esthétique</div>
-  <div ng-mouseover="$root.seDisplay=false" ng-click="$root.clickMath()" class="item bubble link" id="math">Maquillage artistique et tatouage Hénné</div>
-  <div ng-mouseover="$root.seDisplay=true" ng-click="$root.clickSe()" class="item bubble link" id="se">Soins Esthétiques</div>
+  <div ng-mouseover="$root.seDisplay=false" ng-click="$root.clickMain()" class="item bubble link" id="photos">Accueil</div>
+  <div ng-mouseover="$root.seDisplay=false" ng-click="$root.clickSe()" class="item bubble link" id="photos">Prestations</div>
+  <!--<div ng-mouseover="$root.seDisplay=false" ng-click="$root.clickMe()" class="item bubble link" id="me">Massage Esthétique</div>-->
+  <!--<div ng-mouseover="$root.seDisplay=false" ng-click="$root.clickMath()" class="item bubble link" id="math">Maquillage artistique et tatouage Hénné</div>-->
+  <!--<div ng-mouseover="$root.seDisplay=true" ng-click="$root.clickSe()" class="item bubble link" id="se">Soins Esthétiques</div>-->
   <div ng-mouseover="$root.seDisplay=false" ng-click="$root.clickPhoto()" class="item bubble link" id="photos">Photos / videos</div>
   <div ng-mouseover="$root.seDisplay=false" ng-click="$root.clickContact()" class="item bubble link" id="contact">Contactez moi !</div>
 
-  <div id="seItems" class="bubble" ng-class="{hide:!$root.seDisplay}" ng-mouseleave="$root.seDisplay=false">
-    <div class="item">La beauté des mains et des pieds</div>
-    <div class="item">Les épilations</div>
-    <div class="item">Le maquillage</div>
-    <div class="item">Les soins complémentaires</div>
-  </div>
+  <!--<div id="seItems" class="bubble" ng-class="{hide:!$root.seDisplay}" ng-mouseleave="$root.seDisplay=false">-->
+    <!--<div ng-click="changeLocation('bmp')" class="item">La beauté des mains et des pieds</div>-->
+    <!--<div ng-click="changeLocation('epilations')" class="item">Les épilations</div>-->
+    <!--<div ng-click="changeLocation('maquillage')" class="item">Le maquillage</div>-->
+    <!--<div ng-click="changeLocation('soinscomp')" class="item">Les soins complémentaires</div>-->
+  <!--</div>-->
 
 
 </div>

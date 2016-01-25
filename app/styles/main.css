@@ -1,7 +1,7 @@
 body{
   height:1080px;
   width:1920px;
-  background-image:url(../images/background.jpg);
+  background-image:url(../images/background2.jpg);
   background-size:100% 90%;
   color:#28455D;
   overflow: hidden;
@@ -41,13 +41,13 @@ body{
 }
 
 .bubble{
-    border:2px solid white;
+   /* border:2px solid white; */
     border-radius:20px 20px 20px 20px;
-    background-color: rgba(226, 255, 146, 0.65);
+    /*background-color: rgba(226, 255, 146, 0.65); */
     text-align:center;
     padding-top:15px;
     padding-bottom:15px;
-    box-shadow:1px 1px 20px black;
+    /*box-shadow:1px 1px 20px black;*/
 }
 
 .bubble.link{
@@ -70,8 +70,9 @@ body{
 }
 
 .bubble.link:hover{
-  background-color: rgba(226, 255, 146, 0.95);
+  background-color: rgba(72, 255, 0, 0.50);
   box-shadow:10px 1px 50px #008721;
+
 }
 
 
@@ -143,6 +144,12 @@ PAGE
   height:250px;
   top:600px;
   left:1080px;
+}
+
+.eventoffertitlle{
+  font-size:30px;
+  margin-bottom:20px;
+  text-decoration: underline;
 }
 
 

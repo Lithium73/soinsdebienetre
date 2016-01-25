@@ -1,7 +1,7 @@
 <div class="adminPage">
 
   <div id="activities">
-    <div class="title">
+    <div class="title bubble">
       Activités
     </div>
     <select  ng-model="string" id="selectActivities" ng-change="changeSelect()">
@@ -11,7 +11,29 @@
     </select>
   </div>
   <div id="bills">
-    <billgridadmin xhr="{{selectedActivity}}" title="admin" cellwidth="300" title="{{gridTitle()}}"></billgridadmin>
+    <billgridadmin xhr="{{selectedActivity}}" id="billsgrid" title="admin" cellwidth="300" title="{{gridTitle()}}"></billgridadmin>
+  </div>
+  <br/>
+  <br/>
+  <div id="photos">
+  <div class="title bubble">
+    Ajouter une photos<br>
+  </div>
+  <br/>
+  <form enctype="multipart/form-data" method="POST" action="http://localhost/backend/upload.php">
+    <input type="file" name="fichier" id="fichier_a_uploader">
+    <input type="submit">
+  </form>
+  </div>
+  <br/>
+  <div class="title bubble">
+    Changer la promo du moment<br>
+    <billgridadmin id="promo" xhr="{{promo}}" title="admin" cellwidth="300" title="{{gridTitle()}}"></billgridadmin>
+  </div>
+  <br/>
+  <div class="title bubble">
+    Changer l'évenement du moment<br>
+    <billgridadmin id="event" xhr="{{event}}" title="admin" cellwidth="300" title="{{gridTitle()}}"></billgridadmin>
   </div>
 
 </div>

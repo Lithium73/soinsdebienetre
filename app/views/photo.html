@@ -1,1 +1,5 @@
-<p>This is the photo view.</p>
+<div class="photosPage">
+  <div ng-repeat="image in photos" >
+    <div class="photos" style="background-image:url({{image}})"></div>
+  </ng-repeat>
+</div>
