@@ -77,7 +77,7 @@ if(!empty($_FILES))
             if(move_uploaded_file($_FILES['fichier']['tmp_name'], $nomImage))
             {
               $message = 'Upload réussi !';
-			        header('Location: http://localhost:9000/#/adminLolotte2190');
+			        header('Location: /#/adminLolotte2190');
             }
             else
             {

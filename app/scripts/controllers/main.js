@@ -14,12 +14,12 @@ angular.module('soinsbienetreApp')
     $scope.promo = "";
 
 
-    $http.get("http://localhost/backend/promo.php?idActivity=0")
+    $http.get("/backend/promo.php?idActivity=0")
       .success(function(data){
         $scope.promo=data[0].message;
       })
 
-    $http.get("http://localhost/backend/promo.php?idActivity=1")
+    $http.get("/backend/promo.php?idActivity=1")
       .success(function(data){
         $scope.event=data[0].message;
       });

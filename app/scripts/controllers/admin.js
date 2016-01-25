@@ -43,7 +43,7 @@ angular.module('soinsbienetreApp')
             headers: {"Content-Type": "application/json;charset=utf-8"}
           });
         }else{
-          $http.post("http://localhost/backend/bill.php",JSON.stringify(obj));
+          $http.post("/backend/bill.php",JSON.stringify(obj));
         }
         data.push(obj);
       }
@@ -71,7 +71,7 @@ angular.module('soinsbienetreApp')
             headers: {"Content-Type": "application/json;charset=utf-8"}
           });
         }else{
-          $http.post("http://localhost/backend/promo.php?idActivity=1",JSON.stringify(obj));
+          $http.post("/backend/promo.php?idActivity=1",JSON.stringify(obj));
         }
         data.push(obj);
       }
@@ -92,7 +92,7 @@ angular.module('soinsbienetreApp')
             headers: {"Content-Type": "application/json;charset=utf-8"}
           });
         }else{
-          $http.post("http://localhost/backend/promo.php?idActivity=0",JSON.stringify(obj));
+          $http.post("/backend/promo.php?idActivity=0",JSON.stringify(obj));
         }
         data.push(obj);
       }

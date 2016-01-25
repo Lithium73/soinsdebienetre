@@ -43,7 +43,7 @@ angular.module('soinsbienetreApp')
 
     $scope.sendMail = function(){
       var message = $("#contactTextArea")[0].value;
-      $http.post("http://localhost/backend/sendmail.php",{"message":message});
+      $http.post("/backend/sendmail.php",{"message":message});
     }
 
   });

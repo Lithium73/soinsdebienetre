@@ -21,7 +21,7 @@
     $finalArr = array();
     for($i=0;$i<sizeof($files1);$i++){
       if(strpos($files1[$i],".jpg") != false){
-        array_push($finalArr,"http://localhost/backend/".$files1[$i]);
+        array_push($finalArr,"/backend/".$files1[$i]);
       }
     }
     echo json_encode($finalArr);

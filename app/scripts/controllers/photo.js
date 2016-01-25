@@ -10,7 +10,7 @@
 angular.module('soinsbienetreApp')
   .controller('PhotoCtrl', function ($scope,$http) {
 
-    $http.get("http://localhost/backend/photos.php").success(function(data){
+    $http.get("/backend/photos.php").success(function(data){
       $scope.photos = data;
     })
 
