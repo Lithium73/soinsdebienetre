@@ -3,15 +3,17 @@
 }
 
 #maquillagegrid{
-  position:absolute;
-  top: 531px;
-  left: 892px;
+  /*position:absolute;*/
+  /*top: 531px;*/
+  /*left: 892px;*/
+  display:inline-block;
 }
 
 #tatouagegrid{
-  position:absolute;
-  top:750px;
-  left: 892px;
+  display:inline-block;
+  /*position:absolute;*/
+  /*top:750px;*/
+  /*left: 892px;*/
 }
 
 #maquillage{

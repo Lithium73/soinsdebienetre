@@ -15,7 +15,7 @@ angular.module('soinsbienetreApp')
       link: function postLink(scope, element, attrs) {
 
         scope.$watch(function() {return element.attr('xhr'); }, function(newValue){
-          //newValue ="http://localhost/"+newValue;
+          //newValue ="http://soinsdebienetre.esy.es/"+newValue;
           element[0].innerHTML = "";
           var dataUrl = newValue;
           var cellWidth = attrs.cellwidth;

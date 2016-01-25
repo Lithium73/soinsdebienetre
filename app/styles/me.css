@@ -9,20 +9,20 @@
   text-align:left;
   display:inline-block;
   width:1000px;
-  height:500px;
+  height:285px;
 }
 
 .meDesc #content{
   position:absolute;
   width:1000px;
-  height:500px;
+  height:285px;
 }
 
 #meBill{
-  position:absolute;
+  /*position:absolute;*/
   display:inline-block;
-  left:892px;
-  top:650px;
+  /*left:892px;*/
+  /*top:650px;*/
 }
 
 #photo{

@@ -3,11 +3,13 @@
 }
 
 .soinscompDesc{
+  margin-top:50px;
   display:inline-block;
 }
 
 .soinscompPage billgrid{
-  position:absolute;
-  left:892px;
-  top:400px;
+  display: inline-block;
+  /*position:absolute;*/
+  /*left:892px;*/
+  /*top:400px;*/
 }

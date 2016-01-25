@@ -3,6 +3,7 @@ billgrid{
 }
 
 .cell{
+  margin-top:5px;
   /*border:1px solid white;*/
   /*background-color: rgba(92, 203, 64, 0.74);;*/
   color: #356d91;
