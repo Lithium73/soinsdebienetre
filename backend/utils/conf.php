@@ -1,10 +1,10 @@
 <?php
 class Configuration {
 
-    var $mysqlUrl = "localhost";
+    var $mysqlUrl = "mysql.hostinger.fr";
     var $mysqlBdd = "u631435321_soins";
-    var $mysqlUser = "root";
-    var $mysqlPassword = "";
+    var $mysqlUser = "u631435321_lith";
+    var $mysqlPassword = "asustek73";
 
     function getConf() {
         return $this;
