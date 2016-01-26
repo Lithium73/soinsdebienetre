@@ -52,6 +52,10 @@ angular
         templateUrl: 'views/math.html',
         controller: 'MathCtrl'
       })
+      .when('/forfait', {
+        templateUrl: 'views/forfait.html',
+        controller: 'ForfaitCtrl'
+      })
       .when('/se', {
         templateUrl: 'views/se.html',
         controller: 'SeCtrl'
@@ -74,6 +78,7 @@ angular
       });
   }).run(function($rootScope){
     $rootScope.$on("$routeChangeStart", function (event, next, current) {
+      $rootScope.currentPage = "";
       $(document.body).trigger("resize");
       $rootScope.seDisplay=false;
     });

@@ -36,11 +36,11 @@ class MysqlData{
     public function getBill($id=null,$idActivity=null){
 
       if($id != null && $idActivity != null){
-        $query = "select * from line_bill where id = '".$id." and id_activity = '".$idActivity."'";
+        $query = "select * from line_bill where id = '".$id." and id_activity = '".$idActivity."' order by id";
       }else if($id != null && $idActivity == null){
-        $query = "select * from line_bill where id = '".$id."'";
+        $query = "select * from line_bill where id = '".$id."' order by id";
       }else if($id == null && $idActivity != null){
-        $query = "select * from line_bill where id_activity = '".$idActivity."'";
+        $query = "select * from line_bill where id_activity = '".$idActivity."' order by id";
       }
       else{
 
@@ -137,11 +137,11 @@ class MysqlData{
 
     public function getPromo($id=null,$idActivity=null){
       if($id != null && $idActivity != null){
-        $query = "select * from promo where id = '".$id." and id_activity = '".$idActivity."'";
+        $query = "select * from promo where id = '".$id." and id_activity = '".$idActivity."' order by id";
       }else if($id != null && $idActivity == null){
-        $query = "select * from promo where id = '".$id."'";
+        $query = "select * from promo where id = '".$id."' order by id";
       }else if($id == null && $idActivity != null){
-        $query = "select * from promo where id_activity = '".$idActivity."'";
+        $query = "select * from promo where id_activity = '".$idActivity."' order by id";
       }
       else{
         $query = "select * from promo";

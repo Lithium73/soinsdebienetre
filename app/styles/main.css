@@ -9,12 +9,22 @@ body{
   font-family: Arial;
 }
 
+@font-face {
+  src:url(../fonts/Allura-Regular.otf);
+  font-family:allura;
+}
+
 .container{
   top:0px;
   left:0px;
   position:absolute;
   width:1920px;
   height:1080px;
+}
+
+.container.photosPageScroll{
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 #content{
@@ -47,6 +57,7 @@ body{
     text-align:center;
     padding-top:15px;
     padding-bottom:15px;
+
     /*box-shadow:1px 1px 20px black;*/
 }
 

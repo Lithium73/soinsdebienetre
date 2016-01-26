@@ -15,18 +15,20 @@
   </div>
   <br/>
   <br/>
-  <div id="photos">
-  <div class="title bubble">
-    Ajouter une photos<br>
+  <div id="photosupload">
+    <div class="title bubble">
+      Ajouter une photos<br>
+      <form enctype="multipart/form-data" method="POST" action="/backend/upload.php">
+        <input type="file" name="fichier" id="fichier_a_uploader">
+        <input type="submit">
+      </form>
+    </div>
+    <br/>
+
   </div>
   <br/>
-  <form enctype="multipart/form-data" method="POST" action="/backend/upload.php">
-    <input type="file" name="fichier" id="fichier_a_uploader">
-    <input type="submit">
-  </form>
-  </div>
-  <br/>
-  <div class="title bubble">
+
+  <div id="promotitle" class="title bubble">
     Changer la promo du moment<br>
     <billgridadmin id="promo" xhr="{{promo}}" title="admin" cellwidth="300" title="{{gridTitle()}}"></billgridadmin>
   </div>

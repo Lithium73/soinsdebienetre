@@ -7,13 +7,7 @@
 }
 
 #noforfait{
-  position:absolute;
-  top:550px;
-  left:650px;
+  display:inline-block;
 }
 
-#forfait{
-  position:absolute;
-  top:550px;
-  left:1102px;
-}
+

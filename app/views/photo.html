@@ -1,5 +1,5 @@
 <div class="photosPage">
   <div ng-repeat="image in photos" >
-    <div class="photos" style="background-image:url({{image}})"></div>
+    <a ng-href="{{image}}"><div class="photos" style="background-image:url({{image}})"></div></a>
   </ng-repeat>
 </div>

@@ -8,7 +8,9 @@
  * Controller of the soinsbienetreApp
  */
 angular.module('soinsbienetreApp')
-  .controller('AdminCtrl', function ($scope,$http) {
+  .controller('AdminCtrl', function ($scope,$http,$rootScope) {
+
+    $rootScope.currentPage = "photosPageScroll";
 
     $scope.activities = [
       {id:"0",title:"Massage esthétiques"},

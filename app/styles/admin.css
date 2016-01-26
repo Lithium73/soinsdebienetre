@@ -1,3 +1,39 @@
-#photos .bubble{
+#photosupload .bubble{
   margin-top:50px;
 }
+
+#photosupload{
+  margin-top:104px;
+}
+
+.adminPage .bubble{
+  float:left;
+}
+
+.photosPageScroll #info{
+  display:none;
+}
+
+.photosPageScroll .row{
+  height:20px;
+}
+
+#promotitle{
+  float:none;
+  display:inline-block;
+  margin-top:150px;
+  margin-left:-308px;
+}
+
+#promo .billgridTitle, #promo .price{
+  display:none;
+}
+
+#promo .text, #event .text{
+  width:1500px !important;
+}
+
+#event .billgridTitle, #event .price{
+  display:none;
+}
+

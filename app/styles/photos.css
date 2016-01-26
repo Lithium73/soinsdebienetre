@@ -1,6 +1,15 @@
 .photos{
-  margin:50px;
-  height:100px;
-  width:150px;
-  background-size:150px 100px;
+  margin: 30px;
+  height: 158px;
+  width: 225px;
+  background-size: 280px;
+  background-repeat: no-repeat;
+  background-position:center;
+  float: left;
+}
+
+.photosPage{
+  overflow: auto;
+  margin-left:200px;
+  padding-right:200px;
 }

@@ -17,7 +17,7 @@ angular.module('soinsbienetreApp')
         scope.$watch(function() {return element.attr('xhr'); }, function(newValue){
           element[0].innerHTML = "";
 
-         // newValue = "http://localhost/"+newValue;
+         // newValue ="http://soinsdebienetre.esy.es/"+newValue;
           var dataUrl = newValue;
           var cellWidth = attrs.cellwidth;
           $http.get(dataUrl)
