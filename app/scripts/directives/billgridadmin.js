@@ -17,7 +17,7 @@ angular.module('soinsbienetreApp')
         scope.$watch(function() {return element.attr('xhr'); }, function(newValue){
           element[0].innerHTML = "";
 
-         // newValue ="http://soinsdebienetre.esy.es/"+newValue;
+          newValue ="http://soinsdebienetre.esy.es/"+newValue;
           var dataUrl = newValue;
           var cellWidth = attrs.cellwidth;
           $http.get(dataUrl)
@@ -61,12 +61,12 @@ angular.module('soinsbienetreApp')
         }
 
         var createTitle = function(title,cellWidth){
-          var row = createRow("",title,"€",cellWidth);
+          var row = createRow("",title,"€",cellWidth,true);
           row.className = "billgridTitle";
           return row;
         };
 
-        var createRow = function(idBdd,title,price,cellWidth){
+        var createRow = function(idBdd,title,price,cellWidth,disabled){
           var id = document.createElement("div");
           id.className = "id cell";
           id.textContent = idBdd;
@@ -76,11 +76,17 @@ angular.module('soinsbienetreApp')
           text.className = "text cell";
           text.value = title;
           text.style.width = cellWidth+"px";
+          if(disabled){
+            text.disabled=true;
+          }
 
           var domPrice = document.createElement("input");
           domPrice.className = "price cell";
           domPrice.value = price;
           domPrice.style.width = cellWidth+"px";
+          if(disabled){
+            domPrice.disabled=true;
+          }
 
           var row = document.createElement("div");
           row.className = "row";
